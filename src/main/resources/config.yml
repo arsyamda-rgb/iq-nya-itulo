@@ -1,0 +1,47 @@
+# Radius (block) player di sekitar target yang ikut nonton freecam.
+# (0 = semua player di dunia yang sama)
+radius: 48
+
+# Player yang di-awakening juga ikut nonton freecam.
+# Karena dia harus masuk mode spectator, badannya diganti "patung" armor stand
+# (kepala skin dia + armor; kalau slot armor kosong dikasih armor warna ras).
+# false = dia ga dapat freecam (first-person aja), tapi badan asli tetap kepake.
+target-watches: true
+
+# Widescreen / letterbox (bar hitam atas-bawah) buat yang nonton cutscene.
+# Dibuat dari plat hitam di depan kamera, TANPA resource pack.
+# letterbox-ratio: makin kecil makin tebal barnya (0.74 ~ rasio sinematik 2.39:1 di FOV 70).
+# Kalau FOV player beda jauh, ketebalannya ikut berubah.
+letterbox: true
+letterbox-ratio: 0.74
+letterbox-distance: 0.6
+
+# Maksimal tinggi target naik (block). Otomatis dibatasi kalau ada atap.
+max-rise: 9
+
+# Maksimal blok melayang
+max-debris: 45
+
+# Title muncul di SEMUA player online (termasuk yang beda dunia)
+global-title: true
+
+# Kirim pesan juga ke chat semua player
+broadcast-chat: true
+
+# Buff setelah cutscene selesai
+buffs:
+  enabled: true
+  duration-seconds: 300
+
+# Format MiniMessage (gradasi: <gradient:warna1:warna2:phase>teks</gradient>)
+# Placeholder: {player} {race} {RACE} {g1} {g2} {phase}
+# {g1}/{g2} = warna gradasi ras, {phase} = geser gradasi (dianimasi otomatis di title)
+# Override per ras: messages.<beast|dragon|elf|human>.<start|title|subtitle|broadcast>
+messages:
+  start: "<gradient:{g1}:{g2}:{phase}>Sesuatu sedang terbangun...</gradient>"
+  title: "<bold><gradient:{g1}:{g2}:{phase}>{player}</gradient></bold>"
+  subtitle: "<gradient:{g2}:{g1}:{phase}>TELAH BER-EVOLUSI MENJADI GRAND {RACE}</gradient>"
+  broadcast: "<gradient:{g1}:{g2}><bold>{player}</bold> TELAH BER-EVOLUSI MENJADI GRAND {RACE}!</gradient>"
+  human:
+    subtitle: "<gradient:{g2}:{g1}:{phase}>TELAH DIPILIH OLEH ARTHUR</gradient>"
+    broadcast: "<gradient:{g1}:{g2}><bold>{player}</bold> TELAH DIPILIH OLEH ARTHUR!</gradient>"

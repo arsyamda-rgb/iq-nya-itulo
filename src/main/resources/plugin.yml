@@ -1,0 +1,14 @@
+name: AwakeningCutscene
+version: 1.0.0
+main: com.awakening.AwakeningPlugin
+api-version: '1.21'
+description: Cutscene awakening megah (freecam, partikel, blok melayang)
+commands:
+  awakening:
+    description: Jalankan cutscene awakening
+    usage: /awakening <beast|dragon|elf|human> <player>
+    permission: awakening.use
+permissions:
+  awakening.use:
+    description: Boleh pakai /awakening
+    default: op
